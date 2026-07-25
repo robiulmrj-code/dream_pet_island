@@ -48,6 +48,14 @@ class HomePage extends StatelessWidget {
                 ],
               ),
             ),
+            const SizedBox(height: AppSpacing.space32),
+            const SizedBox(
+              width: double.infinity,
+              child: ElevatedButton(
+                onPressed: null,
+                child: Text('Play'),
+              ),
+            ),
           ],
         ),
       ),
