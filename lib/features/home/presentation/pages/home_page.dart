@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-import '../../../../core/config/app_config.dart';
 import '../../../../core/constants/app_spacing.dart';
 import '../../../../core/theme/app_colors.dart';
+import '../widgets/home_header.dart';
 
 /// The application's home page.
 class HomePage extends StatelessWidget {
@@ -15,15 +15,7 @@ class HomePage extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text(
-              AppConfig.appName,
-              style: Theme.of(context).textTheme.headlineLarge,
-            ),
-            const SizedBox(height: AppSpacing.space16),
-            Text(
-              'Home',
-              style: Theme.of(context).textTheme.bodyLarge,
-            ),
+            const HomeHeader(),
             const SizedBox(height: AppSpacing.space32),
             Container(
               padding: const EdgeInsets.all(AppSpacing.space16),
