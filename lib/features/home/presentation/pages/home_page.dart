@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+import '../../../../core/config/app_config.dart';
+import '../../../../core/constants/app_spacing.dart';
+
 /// The application's home page.
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -8,11 +11,19 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: Center(
-          child: Text(
-            'Home',
-            style: Theme.of(context).textTheme.headlineMedium,
-          ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(
+              AppConfig.appName,
+              style: Theme.of(context).textTheme.headlineLarge,
+            ),
+            const SizedBox(height: AppSpacing.space16),
+            Text(
+              'Home',
+              style: Theme.of(context).textTheme.bodyLarge,
+            ),
+          ],
         ),
       ),
     );
