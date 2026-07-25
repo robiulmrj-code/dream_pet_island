@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 
+import '../../features/splash/presentation/pages/splash_page.dart';
+
 /// Production navigation foundation for Dream Pet Island.
 ///
 /// This only wires up the global [navigatorKey] and a Navigator
-/// 2.0-compatible `onGenerateRoute` pipeline. No concrete screens exist
-/// yet, so every route currently resolves to the same placeholder page.
+/// 2.0-compatible `onGenerateRoute` pipeline. Only the default route is
+/// mapped to a real screen ([SplashPage]) so far; every other route
+/// resolves to the same placeholder page.
 abstract final class AppRouter {
   /// Global navigator key so navigation can be triggered without a
   /// [BuildContext] (e.g. from services outside the widget tree).
@@ -13,9 +16,17 @@ abstract final class AppRouter {
 
   /// Resolves [settings] into a [Route].
   ///
-  /// Every route currently resolves to the same "not implemented"
-  /// placeholder because no screens have been built yet.
+  /// The default route resolves to [SplashPage]; every other route
+  /// currently resolves to the same "not implemented" placeholder
+  /// because no further screens have been built yet.
   static Route<void> onGenerateRoute(RouteSettings settings) {
+    if (settings.name == Navigator.defaultRouteName) {
+      return MaterialPageRoute<void>(
+        settings: settings,
+        builder: (context) => const SplashPage(),
+      );
+    }
+
     return MaterialPageRoute<void>(
       settings: settings,
       builder: (context) => const _NotImplementedPage(),
