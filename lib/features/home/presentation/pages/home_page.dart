@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../../../core/constants/app_spacing.dart';
 import '../../../../core/theme/app_colors.dart';
+import '../../../shared/presentation/widgets/section_title.dart';
 import '../widgets/home_header.dart';
 
 /// The application's home page.
@@ -26,10 +27,8 @@ class HomePage extends StatelessWidget {
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  Text(
-                    'Welcome to Dream Pet Island',
-                    style: Theme.of(context).textTheme.titleLarge,
-                    textAlign: TextAlign.center,
+                  const SectionTitle(
+                    title: 'Welcome',
                   ),
                   const SizedBox(height: AppSpacing.space12),
                   Text(
